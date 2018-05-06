@@ -1,0 +1,72 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#myContainer,
+#cameraContent,
+.demoWrapper {
+    text-align: center;
+    margin: auto;
+}
+
+.demoWrapper {
+    width: 700px;
+    max-width: 100%;
+    padding: 10px;
+}
+
+#column1,
+#column2 {
+    width: 48%;
+    display: inline-block;
+    margin: auto;
+}
+
+#canvas,
+#video {
+    display: block;
+    margin: 10px auto;
+    border: 1px solid #007ac0;
+}
+
+#cameraError {
+    color: red;
+    display: none;
+}
+
+.sexyButton {
+    text-align: center;
+    margin: auto;
+    padding: 5px 20px;
+    background: #007ac0;
+    border: none;
+    border-radius: 10px;
+    color: #FFF;
+    font-size: 14px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    cursor: pointer;
+}
+
+.sexyButton:hover {
+    background: #0066ac;
+}
+
+.sexyButton:active {
+    background: #005298;
+}
+
+@media screen and (max-width: 768px) {
+    #column1,
+    #column2 {
+        width: 100%;
+        display: block;
+        margin: 10px auto 30px auto;
+    }
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <title>HTML5 Camera</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <div class="demoWrapper">
+            <h1>Demo: Camera Control with HTML5</h1>
+            <p>Use this page to take your picture! Allow this page to access your computer's camera, then click "Snap Photo" to have your picture taken. You can then save that file to your device.</p>
+            
+            <div id="cameraError">
+                Please change your browser's permissions for this site to allow this page to access your webcam. Then refresh this page to try again. Or, if you are using an older browser, please try a different browser from the following supported list: Edge 13+, Chrome 21+, Firefox 34+, Opera 18+.
+            </div>
+            
+            <div id="myContainer">
+                <div id="cameraContent">
+                    <div id="column1">
+                        <video id="video" width="314" height="236" autoplay="" src=""></video>
+                        <button id="snap" class="sexyButton">Snap Photo</button>
+                    </div>
+                    <div id="column2">
+                        <canvas id="canvas" width="314" height="236"></canvas>
+                        <button id="save" class="sexyButton">Download Photo</button>
+                    </div>
+                </div>
+
+                <p id="note"><strong>Note: </strong>This demo is intended to be used on laptops and desktops. Browser support is decent but not yet universal, so  at the time of this writing, this works on Chrome, Firefox, Opera, and Edge. Safari and IE are NOT supported. Mobile devices can access the camera directly through any input element with a "file" type, so this camera view would be redundant for mobile. For a complete list of supported browsers, please see <a href="https://caniuse.com/#feat=stream" target="_blank">https://caniuse.com/#feat=stream</a>.</p>
+            </div>
+        </div>
+    </body>
+</html>
