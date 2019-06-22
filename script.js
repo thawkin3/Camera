@@ -46,9 +46,13 @@ $(document).ready(function(){
 		};
 
 	// Put video listeners into place
-    if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia(videoObj).then(function(stream) {
-            video.src = window.URL.createObjectURL(stream);
+			if ('srcObject' in video) {
+				video.srcObject = stream;
+			} else {
+				video.src = window.URL.createObjectURL(stream);
+			}
             video.play();
         }, errorCallback);
     }
@@ -56,17 +60,29 @@ $(document).ready(function(){
 	// Legacy video listeners
 	else if (navigator.getUserMedia) { // Standard
 		navigator.getUserMedia(videoObj, function(stream) {
-			video.src = stream;
+			if ('srcObject' in video) {
+				video.srcObject = stream;
+			} else {
+				video.src = stream;
+			}
 			video.play();
 		}, errorCallback);
 	} else if (navigator.webkitGetUserMedia) { // WebKit-prefixed
-		navigator.webkitGetUserMedia(videoObj, function(stream){
-			video.src = window.webkitURL.createObjectURL(stream);
+		navigator.webkitGetUserMedia(videoObj, function(stream) {
+			if ('srcObject' in video) {
+				video.srcObject = stream;
+			} else {
+				video.src = window.webkitURL.createObjectURL(stream);
+			}
 			video.play();
 		}, errorCallback);
 	} else if (navigator.mozGetUserMedia) { // WebKit-prefixed
-		navigator.mozGetUserMedia(videoObj, function(stream){
-			video.src = window.URL.createObjectURL(stream);
+		navigator.mozGetUserMedia(videoObj, function(stream) {
+			if ('srcObject' in video) {
+				video.srcObject = stream;
+			} else {
+				video.src = window.URL.createObjectURL(stream);
+			}
 			video.play();
 		}, errorCallback);
 	} else {
